@@ -93,12 +93,16 @@ class App extends Component {
             away={{
               name: game.awayTeam.name,
               shortName: game.awayTeam.abbr,
+              color: game.awayTeam.teamColor,
+              textColor: game.awayTeam.textColor,
               units: awayUnits,
               results: awayResults,
             }}
             home={{
               name: game.homeTeam.name,
               shortName: game.homeTeam.abbr,
+              color: game.homeTeam.teamColor,
+              textColor: game.homeTeam.textColor,
               units: homeUnits,
               results: homeResults,
             }}

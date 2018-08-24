@@ -5,6 +5,12 @@ import './BoxScore.css';
 class BoxScore extends Component {
 
   render() {
+    console.log('away:');
+    console.log(this.props.away);
+
+    console.log('home:');
+    console.log(this.props.home);
+
     let uniqueKey = 0;
     return (
       <div className="boxscore">
@@ -36,16 +42,16 @@ class BoxScore extends Component {
           </div>
         </div>
         <div className="boxscore__details">
-          <div className="boxscore__details__team boxscore__details__team--away">
-            <p>
+          <div className="boxscore__details__team boxscore__details__team--away" style={{background: '#' + this.props.away.color}}>
+            <p style={{color: '#' + this.props.away.textColor}}>
               <strong>{this.props.away.name}</strong><small>{this.props.away.shortName}</small>
             </p>
           </div>
           <div className="boxscore__details__info">
             <strong>{this.props.gameState}</strong>
           </div>
-          <div className="boxscore__details__team boxscore__details__team--home">
-            <p>
+          <div className="boxscore__details__team boxscore__details__team--home" style={{background: '#' + this.props.home.color}}>
+            <p style={{color: '#' + this.props.home.textColor}}>
               <strong>{this.props.home.name}</strong><small>{this.props.home.shortName}</small>
             </p>
           </div>
@@ -65,6 +71,8 @@ BoxScore.propTypes = {
   home: PropTypes.shape({
     name: PropTypes.string,
     shortName: PropTypes.string,
+    color: PropTypes.string,
+    textColor: PropTypes.string,
     units: PropTypes.array,
     results: PropTypes.array,
   }),
@@ -72,6 +80,8 @@ BoxScore.propTypes = {
   away: PropTypes.shape({
     name: PropTypes.string,
     shortName: PropTypes.string,
+    color: PropTypes.string,
+    textColor: PropTypes.string,
     units: PropTypes.array,
     results: PropTypes.array,
   }),

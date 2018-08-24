@@ -113,12 +113,6 @@ body {
   display: block;
   text-transform: uppercase;
 }
-.boxscore__details__team--away {
-  background: #002F6C;
-}
-.boxscore__details__team--home {
-  background: #BA0C2F;
-}
 
 .boxscore {
   margin: 50px auto 150px;
